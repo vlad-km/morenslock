@@ -95,18 +95,6 @@
     ((jscl::oget context "fillText") (get-letter) x y)
     (setq y (- y (aref *font-size* i)))))
 
-#+nil
-(defun draw-rain (x y)
-  (let ((style)
-        (rc))
-    (dotimes (i 21)
-      (setq rc (get-letter))
-      (setq style (get-color i))
-      (setf (jscl::oget context "fillStyle") style)
-      ((jscl::oget context "fillText") rc x y)
-      (setq y (- y (aref *font-size* i))))))
-
-
 (defun do-rain ()
   (setq e-current-width (jscl::oget canvas "width")
         e-current-height (jscl::oget canvas "height"))
